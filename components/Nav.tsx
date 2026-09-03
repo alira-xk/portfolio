@@ -48,7 +48,8 @@ export default function Nav() {
           className="font-display text-base font-medium tracking-tight text-mono-950 outline-2 outline-offset-2 outline-mono-700 transition-opacity focus:outline hover:opacity-70"
           aria-label="Ali Raza - Home"
         >
-          AR.
+          <span>AR</span>
+          <span className="text-accent">.</span>
         </a>
 
         <ul className="hidden items-center gap-8 md:flex">
@@ -63,7 +64,15 @@ export default function Nav() {
                 }`}
                 aria-current={active === href ? "page" : undefined}
               >
-                {label}
+                <span
+                  className={
+                    active === href
+                      ? "border-b-2 border-accent pb-1"
+                      : "border-b-2 border-transparent pb-1"
+                  }
+                >
+                  {label}
+                </span>
               </a>
             </li>
           ))}
@@ -71,7 +80,7 @@ export default function Nav() {
 
         <a
           href="#contact"
-          className="text-xs font-medium uppercase tracking-[0.15em] text-mono-950 outline-2 outline-offset-2 outline-mono-700 transition-colors focus:outline hover:text-mono-500"
+          className="text-xs font-medium uppercase tracking-[0.15em] text-mono-950 outline-2 outline-offset-2 outline-mono-700 transition-colors focus:outline hover:text-accent"
         >
           Contact
         </a>

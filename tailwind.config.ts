@@ -20,6 +20,10 @@ const config = {
           900: "#171717",
           950: "#0a0a0a",
         },
+        accent: {
+          DEFAULT: "#ff5500",
+          light: "#ff7733",
+        },
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
