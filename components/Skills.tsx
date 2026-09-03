@@ -31,14 +31,14 @@ export default function Skills() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-12 grid auto-rows-auto gap-6 md:grid-cols-2 md:items-start">
           {skillGroups.map((g, i) => {
             const Icon = iconMap[g.icon];
             return (
               <Reveal key={g.category} delay={0.1 * i}>
-                <section className="card p-6">
+                <section className="card flex h-full flex-col p-6">
                   <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
                       {Icon && <Icon className="h-5 w-5" aria-hidden="true" />}
                     </div>
                     <h3 className="font-display text-base font-semibold text-text-primary">
@@ -54,7 +54,7 @@ export default function Skills() {
                       <span
                         key={s}
                         role="listitem"
-                        className="rounded-lg border border-white/5 bg-white/5 px-3 py-1.5 text-sm font-medium text-text-secondary transition-all outline-2 outline-offset-2 outline-accent hover:border-white/10 hover:text-text-primary focus:outline"
+                        className="inline-flex items-center rounded-lg border border-white/5 bg-white/5 px-3 py-1.5 text-sm font-medium text-text-secondary transition-all outline-2 outline-offset-2 outline-accent hover:border-white/10 hover:text-text-primary focus:outline"
                         tabIndex={0}
                       >
                         {s}
