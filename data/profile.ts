@@ -2,7 +2,7 @@ export const profile = {
   name: "Ali Raza",
   role: "Software Engineer",
   tagline:
-    "I build backend systems and apply AI/NLP to solve real problems. Final-year Software Engineering student specializing in secure, scalable backend architectures and NLP applications that deliver measurable impact.",
+    "I build backend systems and apply AI/NLP to solve real problems. Software Engineering graduate specializing in secure, scalable backend architectures and NLP applications that deliver measurable impact.",
   email: "alira7640@gmail.com",
   phone: "+92-324-4098559",
   location: "Lahore, Pakistan",
@@ -21,6 +21,25 @@ export const profile = {
     "Built text-based food calorie estimator using DistilBERT with 84% prediction accuracy on food descriptions.",
     "Developed forensic timeline reconstructor automating metadata extraction from multiple file formats with integrity verification.",
     "Engineered secure patient management system with RBAC, JWT auth, and sub-second query response times on 5000+ records.",
+  ],
+  education: [
+    {
+      school: "University of Central Punjab, Lahore",
+      period: "Oct 2022 – Sep 2026",
+      degree: "Bachelor's in Software Engineering",
+      detail: "Major: Software Development, Minor: Artificial Intelligence",
+    },
+    {
+      school: "Punjab Group of Colleges, Lahore",
+      period: "Aug 2020 – Aug 2022",
+      degree: "Intermediate in Computer Science",
+      detail: "Major: Computer Science, Minor: Physics",
+    },
+  ],
+  certifications: [
+    { name: "Deloitte Australia - Technology Job Simulation", date: "May 2026" },
+    { name: "Meta - Advanced React", date: "Sep 2025" },
+    { name: "DeepLearning.AI - AI For Everyone", date: "Aug 2025" },
   ],
 };
 

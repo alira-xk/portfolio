@@ -53,6 +53,38 @@ export default function About() {
             </dl>
           </Reveal>
         </div>
+
+        <div className="mt-16 grid gap-12 md:grid-cols-2">
+          <Reveal delay={0.1}>
+            <h3 className="font-display text-lg font-semibold mb-4">
+              Education
+            </h3>
+            <div className="space-y-4">
+              {profile.education.map((e, i) => (
+                <div key={i} className="card p-4">
+                  <p className="font-medium text-sm">{e.school}</p>
+                  <p className="text-xs text-text-muted">{e.period}</p>
+                  <p className="mt-1 text-sm text-text-secondary">{e.degree}</p>
+                  <p className="text-xs text-text-muted">{e.detail}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.2}>
+            <h3 className="font-display text-lg font-semibold mb-4">
+              Certifications
+            </h3>
+            <div className="space-y-3">
+              {profile.certifications.map((c, i) => (
+                <div key={i} className="card flex items-center justify-between p-4">
+                  <p className="text-sm font-medium">{c.name}</p>
+                  <p className="text-xs text-text-muted">{c.date}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
