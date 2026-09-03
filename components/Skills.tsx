@@ -31,7 +31,7 @@ export default function Skills() {
           </h2>
         </Reveal>
 
-        <div className="mt-12 grid auto-rows-auto gap-6 md:grid-cols-2 md:items-start">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 md:items-stretch">
           {skillGroups.map((g, i) => {
             const Icon = iconMap[g.icon];
             return (
