@@ -1,70 +1,64 @@
-"use client";
-
-import { Layout, Sparkles, Database, Wrench } from "lucide-react";
 import { skillGroups } from "@/data/skills";
 import Reveal from "./Reveal";
-
-const iconMap: Record<string, React.ElementType> = {
-  layout: Layout,
-  sparkles: Sparkles,
-  database: Database,
-  wrench: Wrench,
-};
 
 export default function Skills() {
   return (
     <section
       id="skills"
-      className="border-t border-white/5 py-24 md:py-32"
+      className="section-pad border-t border-mono-200"
       aria-labelledby="skills-heading"
     >
       <div className="container-x">
-        <Reveal>
-          <p className="mb-2 text-xs font-medium uppercase tracking-widest text-text-muted">
-            Toolbox
-          </p>
-          <h2
-            id="skills-heading"
-            className="font-display text-3xl font-bold md:text-4xl"
-          >
-            Technologies & <span className="gradient-text">tools</span>
-          </h2>
-        </Reveal>
+        <div className="grid grid-cols-12 gap-6">
+          <div className="col-span-12 md:col-span-2">
+            <p className="index-num text-mono-200">04</p>
+          </div>
+          <div className="col-span-12 md:col-span-10">
+            <p className="kicker">Toolbox</p>
+            <h2
+              id="skills-heading"
+              className="font-display text-3xl font-medium tracking-tight md:text-5xl"
+            >
+              Technologies & <span className="text-mono-400">tools.</span>
+            </h2>
+          </div>
+        </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 md:items-stretch">
-          {skillGroups.map((g, i) => {
-            const Icon = iconMap[g.icon];
-            return (
-              <Reveal key={g.category} delay={0.1 * i}>
-                <section className="card flex h-full flex-col p-6">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
-                      {Icon && <Icon className="h-5 w-5" aria-hidden="true" />}
-                    </div>
-                    <h3 className="font-display text-base font-semibold text-text-primary">
-                      {g.category}
-                    </h3>
-                  </div>
-                  <div
-                    className="mt-4 flex flex-wrap gap-2"
-                    role="list"
-                    aria-label={`${g.category} skills`}
-                  >
-                    {g.skills.map((s) => (
-                      <span
-                        key={s}
-                        role="listitem"
-                        className="inline-flex items-center rounded-lg border border-white/5 bg-white/5 px-3 py-1.5 text-sm font-medium text-text-secondary transition-all outline-2 outline-offset-2 outline-accent hover:border-white/10 hover:text-text-primary focus:outline"
-                        tabIndex={0}
-                      >
-                        {s}
-                      </span>
-                    ))}
-                  </div>
-                </section>
-              </Reveal>
-            );
-          })}
+        <div className="mt-16 border-t border-mono-200">
+          {skillGroups.map((g, i) => (
+            <Reveal key={g.category} delay={0.05 * i}>
+              <div className="grid grid-cols-12 gap-4 border-b border-mono-200 py-8">
+                <div className="col-span-12 md:col-span-2">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-mono-400 tabular-nums">
+                    0{i + 1}
+                  </p>
+                </div>
+                <div className="col-span-12 md:col-span-3">
+                  <h3 className="font-display text-base font-medium text-mono-950">
+                    {g.category}
+                  </h3>
+                </div>
+                <div
+                  className="col-span-12 md:col-span-7 flex flex-wrap items-center gap-x-2 gap-y-2"
+                  role="list"
+                  aria-label={`${g.category} skills`}
+                >
+                  {g.skills.map((s, idx) => (
+                    <span
+                      key={s}
+                      role="listitem"
+                      className="text-sm text-mono-600"
+                    >
+                      {s}
+                      {idx < g.skills.length - 1 && (
+                        <span className="ml-2 text-mono-300">·</span>
+                      )}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  @apply bg-base text-text-primary font-body antialiased;
+  @apply bg-mono-50 text-mono-950 font-body antialiased;
 }
 
 @layer components {
@@ -21,88 +21,72 @@ body {
     @apply mx-auto w-full max-w-6xl px-6 md:px-10;
   }
 
-  .gradient-text {
-    @apply text-text-primary font-bold;
+  /* Editorial kicker above section labels */
+  .kicker {
+    @apply text-[11px] font-medium uppercase tracking-[0.25em] text-mono-400 mb-6;
   }
 
-  .card {
-    @apply rounded-2xl border-2 border-muted bg-surface transition-all duration-300 shadow-sm hover:shadow-md hover:border-text-muted;
+  /* Hairline divider */
+  .rule {
+    @apply border-t border-mono-200;
   }
 
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-text-primary px-6 py-3 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent-light hover:shadow-lg hover:shadow-black/15;
+  /* Section padding */
+  .section-pad {
+    @apply py-20 md:py-32;
   }
 
-  .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-text-primary px-6 py-3 text-sm font-semibold text-text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-muted hover:border-text-secondary;
+  /* Index number */
+  .index-num {
+    @apply font-display text-mono-200 text-6xl md:text-8xl font-medium tabular-nums select-none;
+  }
+
+  /* Inverted (dark) section */
+  .invert {
+    @apply bg-mono-950 text-mono-50;
+  }
+
+  /* Horizontal list row */
+  .list-row {
+    @apply flex flex-col md:flex-row md:items-start gap-4 md:gap-12 py-8 border-t border-mono-200 transition-transform duration-300 hover:translate-x-2;
   }
 }
 
-/* Focus management for keyboard navigation */
 :focus-visible {
-  outline: 3px solid var(--tw-colors-text-primary, #0d0d0d);
-  outline-offset: 2px;
+  outline: 2px solid theme("colors.mono.700");
+  outline-offset: 3px;
 }
 
-/* Enhanced button and link focus states */
 button:focus-visible,
 a:focus-visible {
-  @apply outline-2 outline-offset-2 outline-text-primary;
+  @apply outline-2 outline-offset-2 outline-mono-700;
 }
 
-/* Improved heading hierarchy */
-h1 {
-  @apply leading-tight tracking-tight;
-}
-
-h2 {
-  @apply leading-snug tracking-normal;
-}
-
-h3 {
-  @apply leading-tight;
-}
-
-/* Better text selection contrast */
 ::selection {
-  @apply bg-text-primary text-white;
+  background-color: theme("colors.mono.950");
+  color: theme("colors.mono.50");
 }
 
-/* Improved scrollbar with better contrast */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 6px;
 }
-
 ::-webkit-scrollbar-track {
-  background: #f5f5f5;
+  background: theme("colors.mono.100");
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #b0b0b0;
-  border-radius: 8px;
-  transition: background 0.2s;
-  border: 2px solid #f5f5f5;
+  background: theme("colors.mono.400");
+  border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #808080;
+  background: theme("colors.mono.600");
 }
 
-/* Section borders for visual separation */
-section {
-  @apply relative;
-}
-
-section:not(:first-of-type) {
-  @apply border-t border-muted;
-}
-
-/* Respect user's motion preferences */
+/* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {
@@ -112,47 +96,6 @@ section:not(:first-of-type) {
   }
 }
 
-/* Improved contrast for interactive elements on hover */
-@media (hover: hover) {
-  a:hover,
-  button:hover {
-    @apply transition-all duration-200;
-  }
-}
-
-/* Enhanced focus visible for form elements */
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
-  @apply outline-2 outline-offset-2 outline-text-primary;
-}
-
-/* Better disabled state */
-button:disabled,
-a[aria-disabled="true"] {
-  @apply cursor-not-allowed opacity-50;
-}
-
-/* Smooth border transitions */
-.card {
-  @apply border-muted hover:border-text-secondary/70;
-}
-
-/* Text hierarchy improvements */
-p {
-  @apply leading-relaxed;
-}
-
-/* Link styling */
 a {
   @apply transition-colors duration-200;
-}
-
-a:not(.btn-primary):not(.btn-ghost) {
-  @apply text-text-primary hover:text-text-secondary underline-offset-2;
-}
-
-/* Navigation header styling */
-header {
-  @apply bg-surface;
 }

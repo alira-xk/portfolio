@@ -1,87 +1,69 @@
-"use client";
-
-import { ArrowDown, Mail } from "lucide-react";
-import { GithubIcon, LinkedinIcon, TwitterIcon } from "./icons";
+import { ArrowDown } from "lucide-react";
 import { profile } from "@/data/profile";
-import Reveal from "./Reveal";
-
-const iconMap: Record<string, React.ElementType> = {
-  github: GithubIcon,
-  linkedin: LinkedinIcon,
-  twitter: TwitterIcon,
-  mail: Mail,
-};
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden pt-16"
+      className="relative flex min-h-screen flex-col justify-between pt-24 pb-10"
       aria-label="Hero"
     >
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute top-1/4 left-1/4 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/15 blur-[120px]" />
-        <div className="absolute right-0 bottom-0 h-80 w-80 rounded-full bg-fuchsia-500/10 blur-[100px]" />
+      <div className="container-x flex-1 flex flex-col justify-center">
+        <div className="grid grid-cols-12 gap-6 items-end">
+          <div className="col-span-12 md:col-span-9">
+            <p className="kicker">
+              {profile.location} <span className="mx-2 text-mono-300">/</span>{" "}
+              {profile.role}
+            </p>
+            <h1 className="font-display font-medium tracking-ultratight leading-[0.9] text-mono-950">
+              <span className="block text-[clamp(3.5rem,12vw,11rem)]">
+                Ali
+              </span>
+              <span className="block text-[clamp(3.5rem,12vw,11rem)] text-mono-300">
+                Raza.
+              </span>
+            </h1>
+          </div>
+
+          <div className="col-span-12 md:col-span-3 md:text-right">
+            <p className="index-num text-mono-200">
+              01<span className="text-mono-300">/05</span>
+            </p>
+            <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.25em] text-mono-400">
+              Section
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-16 grid grid-cols-12 gap-6 items-end">
+          <div className="col-span-12 md:col-span-7">
+            <p className="max-w-xl text-base leading-relaxed text-mono-600 md:text-lg">
+              {profile.tagline}
+            </p>
+          </div>
+
+          <div className="col-span-12 md:col-span-5 flex md:justify-end items-center gap-3">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-mono-950 opacity-75 animate-ping" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-mono-950" />
+            </span>
+            <p className="text-xs font-medium uppercase tracking-[0.15em] text-mono-700">
+              Available for work
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div className="container-x">
-        <Reveal delay={0.1}>
-          <p className="mb-2 text-sm font-medium uppercase tracking-widest text-text-muted">
-            {profile.location}
+      <div className="container-x flex items-end justify-between">
+        <div className="flex items-center gap-3 text-mono-400">
+          <ArrowDown className="h-4 w-4" aria-hidden="true" />
+          <p className="text-[11px] font-medium uppercase tracking-[0.25em]">
+            Scroll
           </p>
-        </Reveal>
-
-        <Reveal delay={0.2}>
-          <h1 className="font-display text-4xl font-bold leading-tight md:text-6xl lg:text-7xl">
-            {profile.name.split(" ")[0]}{" "}
-            <span className="gradient-text">{profile.name.split(" ")[1]}</span>
-          </h1>
-        </Reveal>
-
-        <Reveal delay={0.3}>
-          <p className="mt-4 max-w-2xl text-lg text-text-secondary md:text-xl">
-            {profile.role}
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.4}>
-          <p className="mt-3 max-w-xl text-base leading-relaxed text-text-muted">
-            {profile.tagline}
-          </p>
-        </Reveal>
-
-        <Reveal delay={0.5} className="mt-8 flex flex-wrap items-center gap-4">
-          <a
-            href="#projects"
-            className="btn-primary outline-2 outline-offset-2 outline-white focus:outline"
-          >
-            View Projects
-            <ArrowDown className="h-4 w-4" aria-hidden="true" />
-          </a>
-          <a href="#contact" className="btn-ghost outline-2 outline-offset-2 outline-white focus:outline">
-            Contact Me
-          </a>
-        </Reveal>
-
-        <Reveal delay={0.6}>
-          <nav className="mt-8 flex items-center gap-2" aria-label="Social links">
-            {profile.socials.map((s) => {
-              const Icon = iconMap[s.icon];
-              return (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                  className="group rounded-lg p-2 text-text-muted transition-all outline-2 outline-offset-2 outline-accent focus:outline hover:text-text-primary"
-                >
-                  {Icon && <Icon className="h-5 w-5" />}
-                </a>
-              );
-            })}
-          </nav>
-        </Reveal>
+        </div>
+        <p className="text-[11px] font-medium uppercase tracking-[0.25em] text-mono-400 tabular-nums">
+          {new Date().getFullYear()} — Portfolio
+        </p>
       </div>
     </section>
   );

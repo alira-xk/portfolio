@@ -35,7 +35,7 @@ export default function Nav() {
     <header
       className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-white/5 bg-base/70 backdrop-blur-xl"
+          ? "border-b border-mono-200 bg-mono-50/80 backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
@@ -45,22 +45,21 @@ export default function Nav() {
       >
         <a
           href="#home"
-          className="font-display text-lg font-bold tracking-tight outline-2 outline-offset-2 outline-accent transition-colors focus:outline hover:text-accent-light"
+          className="font-display text-base font-medium tracking-tight text-mono-950 outline-2 outline-offset-2 outline-mono-700 transition-opacity focus:outline hover:opacity-70"
           aria-label="Ali Raza - Home"
         >
-          <span className="gradient-text">AR</span>
-          <span className="ml-1 text-text-muted">.</span>
+          AR.
         </a>
 
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map(({ label, href }) => (
             <li key={href}>
               <a
                 href={href}
-                className={`rounded-lg px-3 py-2 text-sm font-medium transition-colors outline-2 outline-offset-2 outline-accent focus:outline ${
+                className={`text-xs font-medium uppercase tracking-[0.15em] transition-colors outline-2 outline-offset-2 outline-mono-700 focus:outline ${
                   active === href
-                    ? "text-text-primary"
-                    : "text-text-muted hover:text-text-secondary"
+                    ? "text-mono-950"
+                    : "text-mono-400 hover:text-mono-700"
                 }`}
                 aria-current={active === href ? "page" : undefined}
               >
@@ -72,9 +71,9 @@ export default function Nav() {
 
         <a
           href="#contact"
-          className="btn-primary text-xs outline-2 outline-offset-2 outline-white focus:outline md:text-sm"
+          className="text-xs font-medium uppercase tracking-[0.15em] text-mono-950 outline-2 outline-offset-2 outline-mono-700 transition-colors focus:outline hover:text-mono-500"
         >
-          Get in Touch
+          Contact
         </a>
       </nav>
     </header>

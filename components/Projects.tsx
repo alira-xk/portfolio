@@ -9,75 +9,83 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-24 md:py-32"
+      className="section-pad border-t border-mono-200"
       aria-labelledby="projects-heading"
     >
       <div className="container-x">
-        <Reveal>
-          <p className="mb-2 text-xs font-medium uppercase tracking-widest text-text-muted">
-            Featured Work
-          </p>
-          <h2
-            id="projects-heading"
-            className="font-display text-3xl font-bold md:text-4xl"
-          >
-            Selected <span className="gradient-text">projects</span>
-          </h2>
-        </Reveal>
+        <div className="grid grid-cols-12 gap-6">
+          <div className="col-span-12 md:col-span-2">
+            <p className="index-num text-mono-200">03</p>
+          </div>
+          <div className="col-span-12 md:col-span-10">
+            <p className="kicker">Selected Work</p>
+            <h2
+              id="projects-heading"
+              className="font-display text-3xl font-medium tracking-tight md:text-5xl"
+            >
+              <span className="text-mono-400">Featured</span> Projects.
+            </h2>
+          </div>
+        </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 border-t border-mono-200">
           {projects.map((p, i) => (
-            <Reveal key={p.title} delay={0.1 * i}>
-              <article className="group card relative overflow-hidden p-0 outline-2 outline-offset-2 outline-accent hover:border-white/20 focus-within:outline">
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br opacity-0 transition-opacity duration-500 group-hover:opacity-100 ${p.accent}`}
-                />
-                <div className="relative z-10 flex h-full flex-col p-6">
-                  <h3 className="font-display text-lg font-semibold">
+            <Reveal key={p.title} delay={0.05 * i}>
+              <div className="group grid grid-cols-12 gap-4 items-start border-b border-mono-200 py-10 transition-transform duration-300 hover:translate-x-2">
+                <div className="col-span-12 md:col-span-1">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-mono-400 tabular-nums">
+                    0{i + 1}
+                  </p>
+                </div>
+
+                <div className="col-span-12 md:col-span-5">
+                  <h3 className="font-display text-xl font-medium text-mono-950 transition-colors group-hover:text-mono-500 md:text-2xl">
                     {p.title}
                   </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-text-secondary">
+                  <p className="mt-3 text-sm leading-relaxed text-mono-500 md:mt-4">
                     {p.description}
                   </p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {p.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-full bg-white/5 px-2.5 py-0.5 text-[11px] font-medium text-text-muted"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                  <div className="mt-4 flex items-center gap-3">
-                    {p.demo && (
-                      <a
-                        href={p.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-medium text-accent-light outline-2 outline-offset-2 outline-accent transition-colors hover:text-accent focus:outline"
-                      >
-                        Live Demo{" "}
-                        <ExternalLink
-                          className="h-3 w-3"
-                          aria-hidden="true"
-                        />
-                      </a>
-                    )}
-                    {p.repo && (
-                      <a
-                        href={p.repo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-medium text-text-muted outline-2 outline-offset-2 outline-accent transition-colors hover:text-text-primary focus:outline"
-                      >
-                        <GithubIcon className="h-3 w-3" aria-hidden="true" />{" "}
-                        Source
-                      </a>
-                    )}
-                  </div>
                 </div>
-              </article>
+
+                <div className="col-span-12 md:col-span-3 md:col-start-7 flex flex-wrap gap-2 md:gap-3 content-start pt-1">
+                  {p.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="text-[11px] font-medium uppercase tracking-[0.15em] text-mono-400"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="col-span-12 md:col-span-2 md:col-start-10 flex flex-col gap-3 items-start md:items-end pt-1">
+                  {p.repo && (
+                    <a
+                      href={p.repo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-mono-700 outline-2 outline-offset-2 outline-mono-700 transition-colors hover:text-mono-950 focus:outline"
+                    >
+                      <GithubIcon className="h-3.5 w-3.5" aria-hidden="true" />
+                      Source
+                    </a>
+                  )}
+                  {p.demo && (
+                    <a
+                      href={p.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-[11px] font-medium uppercase tracking-[0.15em] text-mono-700 outline-2 outline-offset-2 outline-mono-700 transition-colors hover:text-mono-950 focus:outline"
+                    >
+                      <ExternalLink
+                        className="h-3.5 w-3.5"
+                        aria-hidden="true"
+                      />
+                      Live Demo
+                    </a>
+                  )}
+                </div>
+              </div>
             </Reveal>
           ))}
         </div>
