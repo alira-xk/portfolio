@@ -17,7 +17,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Ali Raza — Software Engineer",
   description:
-    "Portfolio of Ali Raza, a Software Engineer specializing in backend development and AI/NLP, building scalable systems and solving real problems.",
+    "Portfolio of Ali Raza, a Software Engineer specializing in backend development and AI/NLP. Building secure, scalable systems with measurable impact across healthcare, forensics, and consumer applications.",
   openGraph: {
     title: "Ali Raza — Software Engineer",
     description:

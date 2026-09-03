@@ -8,7 +8,7 @@ export const skillGroups: SkillGroup[] = [
   {
     category: "Languages & Frameworks",
     icon: "layout",
-    skills: ["C++", "Python", "JavaScript", "React.js", "Node.js", "Express.js"],
+    skills: ["C++", "Python", "JavaScript", "TypeScript", "React.js", "Next.js", "Express.js"],
   },
   {
     category: "Styling & Motion",

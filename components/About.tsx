@@ -17,8 +17,8 @@ export default function About() {
             id="about-heading"
             className="font-display text-3xl font-bold md:text-4xl"
           >
-            Building products that{" "}
-            <span className="gradient-text">matter</span>
+            Engineering{" "}
+            <span className="gradient-text">scalable, secure</span> systems
           </h2>
         </Reveal>
 
