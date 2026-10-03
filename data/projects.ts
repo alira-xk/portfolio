@@ -22,7 +22,7 @@ export const projects: Project[] = [
     description:
       "C++20 vector database and retrieval engine built from scratch, combining exact and HNSW search with BM25 and hybrid ranking. Features metadata filters, checksummed persistence, concurrent operations, an HTTP API and CLI, and optional Python document/RAG integration.",
     tags: ["C++20", "HNSW", "BM25", "Python", "RAG", "CMake"],
-    private: true,
+    repo: "https://github.com/alira-xk/vector",
     accent: "from-emerald-500/40 to-teal-500/40",
   },
   {
