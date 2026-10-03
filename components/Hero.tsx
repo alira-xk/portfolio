@@ -1,30 +1,13 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { ArrowDown } from "lucide-react";
 import { profile } from "@/data/profile";
 import Reveal from "./Reveal";
 
 export default function Hero() {
-  const heroRef = useRef<HTMLElement>(null);
-  const nameRef = useRef<HTMLHeadingElement>(null);
-
-  // Parallax on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      if (nameRef.current) {
-        nameRef.current.style.transform = `translateY(${scrollY * 0.3}px)`;
-      }
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <section
       id="home"
-      ref={heroRef}
       className="relative flex min-h-screen flex-col justify-between overflow-hidden pt-24 pb-10"
       aria-label="Hero"
     >
@@ -59,7 +42,7 @@ export default function Hero() {
               </p>
             </Reveal>
 
-            <div ref={nameRef} className="will-change-transform">
+            <div>
               <Reveal delay={0.1}>
                 <h1 className="font-display font-medium tracking-ultratight leading-[0.9] text-mono-950">
                   <span className="block text-[clamp(4rem,14vw,12rem)] animate-float">
