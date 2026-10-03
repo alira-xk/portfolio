@@ -12,7 +12,7 @@ export const profile = {
     { label: "Email", href: "mailto:alira7640@gmail.com", icon: "mail" },
   ],
   stats: [
-    { value: "3+", label: "Major projects" },
+    { value: "5+", label: "Major projects" },
     { value: "84%", label: "NLP accuracy" },
     { value: "5000+", label: "DB records optimized" },
     { value: "25%", label: "Faster data retrieval" },

@@ -4,10 +4,27 @@ export type Project = {
   tags: string[];
   demo?: string;
   repo?: string;
+  private?: boolean;
   accent: string;
 };
 
 export const projects: Project[] = [
+  {
+    title: "ORBITAL-X",
+    description:
+      "Simulated spacecraft mission control with live telemetry, a 3D orbital dashboard, ML anomaly detection, and AI-assisted incident investigation. Includes role-based recovery approvals, audited commands, and mission replay.",
+    tags: ["React", "TypeScript", "Three.js", "PostgreSQL", "Redis", "Python"],
+    repo: "https://github.com/alira-xk/orbital-x",
+    accent: "from-indigo-500/40 to-violet-500/40",
+  },
+  {
+    title: "VectorForge",
+    description:
+      "C++20 vector database and retrieval engine built from scratch, combining exact and HNSW search with BM25 and hybrid ranking. Features metadata filters, checksummed persistence, concurrent operations, an HTTP API and CLI, and optional Python document/RAG integration.",
+    tags: ["C++20", "HNSW", "BM25", "Python", "RAG", "CMake"],
+    private: true,
+    accent: "from-emerald-500/40 to-teal-500/40",
+  },
   {
     title: "Food Calorie Estimator",
     description:

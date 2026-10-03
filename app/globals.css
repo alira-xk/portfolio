@@ -151,6 +151,17 @@ a:focus-visible {
 }
 
 /* Scrollbar */
+html {
+  scrollbar-color: theme("colors.mono.300") theme("colors.mono.100");
+  scrollbar-width: thin;
+}
+
+@media (forced-colors: active) {
+  html {
+    scrollbar-color: auto;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 5px;
 }

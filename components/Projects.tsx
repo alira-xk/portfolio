@@ -67,6 +67,11 @@ function ProjectRow({
         </div>
 
         <div className="col-span-12 md:col-span-2 md:col-start-10 flex flex-col gap-3 items-start md:items-end pt-1">
+          {project.private && (
+            <span className="text-[11px] font-medium uppercase tracking-[0.15em] text-mono-500">
+              Private project
+            </span>
+          )}
           {project.repo && (
             <a
               href={project.repo}
