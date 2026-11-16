@@ -25,13 +25,13 @@ export const profile = {
   education: [
     {
       school: "University of Central Punjab, Lahore",
-      period: "Oct 2022 – Sep 2026",
+      period: "Oct 2022 â€“ Sep 2026",
       degree: "Bachelor's in Software Engineering",
       detail: "Major: Software Development, Minor: Artificial Intelligence",
     },
     {
       school: "Punjab Group of Colleges, Lahore",
-      period: "Aug 2020 – Aug 2022",
+      period: "Aug 2020 â€“ Aug 2022",
       degree: "Intermediate in Computer Science",
       detail: "Major: Computer Science, Minor: Physics",
     },
@@ -43,10 +43,24 @@ export const profile = {
   ],
 };
 
+export const experience = [
+  {
+    company: "ZNTH",
+    role: "Software Engineer Intern",
+    period: "Nov 2026 - Present",
+    location: "Lahore, Pakistan",
+    description:
+      "Contributing to ZNTH's website and digital product development, focusing on backend development, API integrations, and email services using Node.js and Resend. Collaborating on building maintainable backend systems and improving digital infrastructure.",
+    type: "internship",
+  },
+];
+
 export const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
+

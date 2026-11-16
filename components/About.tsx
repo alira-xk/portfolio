@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { profile } from "@/data/profile";
+import { profile, experience } from "@/data/profile";
 import Reveal from "./Reveal";
 
 function AnimatedNumber({ target, label }: { target: string; label: string }) {
@@ -69,7 +69,7 @@ export default function About() {
               <span className="text-[11px] font-medium uppercase tracking-[0.2em] text-mono-400">
                 {item}
               </span>
-              <span className="mx-6 text-mono-300 text-xs">—</span>
+              <span className="mx-6 text-mono-300 text-xs">â€”</span>
             </span>
           ))}
         </div>
@@ -159,7 +159,50 @@ export default function About() {
             </div>
           </Reveal>
         </div>
+
+        <div id="experience" className="relative mt-32 grid grid-cols-12 gap-6 pt-20 before:absolute before:left-1/2 before:top-0 before:w-screen before:-translate-x-1/2 before:border-t before:border-mono-200 before:content-[''] md:pt-32">
+          <Reveal delay={0.3} className="col-span-12">
+            <div className="grid grid-cols-12 gap-6">
+              <div className="col-span-12 md:col-span-2">
+                <p className="index-num text-mono-200">03</p>
+              </div>
+              <div className="col-span-12 md:col-span-10">
+                <p className="kicker">
+                  <span className="inline-block h-1 w-6 rounded-sm bg-accent align-middle mr-3" />
+                  Experience
+                </p>
+                <h2
+                  id="experience-heading"
+                  className="font-display text-3xl font-medium tracking-tight md:text-5xl"
+                >
+                  Professional Experience.
+                </h2>
+                <div className="mt-6">
+                  {experience.map((e, i) => (
+                    <div
+                      key={i}
+                      className="group grid grid-cols-12 gap-4 py-6 transition-all duration-300"
+                    >
+                      <p className="col-span-12 md:col-span-3 text-[11px] font-medium uppercase tracking-[0.2em] text-mono-400 group-hover:text-accent transition-colors duration-300">
+                        {e.period}
+                      </p>
+                      <div className="col-span-12 md:col-span-9">
+                        <p className="font-display text-base font-medium text-mono-950">
+                          {e.role}
+                        </p>
+                        <p className="text-sm text-mono-600">{e.company}</p>
+                        <p className="mt-1 text-xs text-mono-400">{e.location}</p>
+                        <p className="mt-6 border-y border-mono-200 py-6 text-sm text-mono-600">{e.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
 }
+

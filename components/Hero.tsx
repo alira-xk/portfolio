@@ -59,7 +59,7 @@ export default function Hero() {
 
           <div className="col-span-12 md:col-span-3 md:text-right">
             <p className="index-num text-mono-200">
-              01<span className="text-mono-300">/05</span>
+              01<span className="text-mono-300">/06</span>
             </p>
             <p className="mt-2 text-[11px] font-medium uppercase tracking-[0.25em] text-mono-400">
               Section
@@ -96,9 +96,10 @@ export default function Hero() {
           </p>
         </div>
         <p className="text-[11px] font-medium uppercase tracking-[0.25em] text-mono-400 tabular-nums">
-          {new Date().getFullYear()} — Portfolio
+          {new Date().getFullYear()} â€” Portfolio
         </p>
       </div>
     </section>
   );
 }
+

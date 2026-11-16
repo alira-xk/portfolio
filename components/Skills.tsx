@@ -18,7 +18,7 @@ export default function Skills() {
               key={i}
               className="text-[10px] font-medium uppercase tracking-[0.3em] text-mono-300 whitespace-nowrap"
             >
-              Software Engineering —
+              Software Engineering â€”
             </span>
           ))}
         </div>
@@ -27,7 +27,7 @@ export default function Skills() {
       <div className="container-x">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-2">
-            <p className="index-num text-mono-200">04</p>
+            <p className="index-num text-mono-200">05</p>
           </div>
           <div className="col-span-12 md:col-span-10">
             <p className="kicker">
@@ -70,7 +70,7 @@ export default function Skills() {
                     >
                       {s}
                       {idx < g.skills.length - 1 && (
-                        <span className="ml-2 text-accent/50">·</span>
+                        <span className="ml-2 text-accent/50">Â·</span>
                       )}
                     </span>
                   ))}
@@ -83,3 +83,4 @@ export default function Skills() {
     </section>
   );
 }
+

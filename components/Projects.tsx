@@ -47,7 +47,7 @@ function ProjectRow({
           <h3 className="font-display text-xl font-medium text-mono-950 transition-colors group-hover:text-mono-600 md:text-2xl">
             {project.title}
             <span className="ml-2 text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              →
+              â†’
             </span>
           </h3>
           <p className="mt-3 text-sm leading-relaxed text-mono-500 md:mt-4">
@@ -112,7 +112,7 @@ export default function Projects() {
       <div className="container-x">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-2">
-            <p className="index-num text-mono-200">03</p>
+            <p className="index-num text-mono-200">04</p>
           </div>
           <div className="col-span-12 md:col-span-10">
             <p className="kicker">
@@ -137,3 +137,4 @@ export default function Projects() {
     </section>
   );
 }
+

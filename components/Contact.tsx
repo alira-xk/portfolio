@@ -54,7 +54,7 @@ export default function Contact() {
       <div className="container-x relative">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-2">
-            <p className="index-num text-mono-800">05</p>
+            <p className="index-num text-mono-800">06</p>
           </div>
           <div className="col-span-12 md:col-span-10">
             <p className="kicker text-mono-500">
@@ -127,3 +127,4 @@ export default function Contact() {
     </section>
   );
 }
+
